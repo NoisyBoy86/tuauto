@@ -65,6 +65,7 @@ class MakesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_make
       @make = Make.find(params[:id])
+      @models = @make.models
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

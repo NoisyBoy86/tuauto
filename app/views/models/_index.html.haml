@@ -1,0 +1,16 @@
+%table
+  %thead
+    %tr
+      %th Make
+      %th Model
+      %th{:colspan => "3"}
+  %tbody
+    - @models.each do |model|
+      %tr
+        %td= model.make.try(:name)
+        %td= model.model
+        %td= link_to 'Show', make_model_path(@make,model)
+        %td= link_to 'Edit', edit_make_model_path(@make,model)
+        %td= link_to 'Destroy',make_model_path(@make,model) , method: :delete, data: { confirm: 'Are you sure?' }
+%br/
+= link_to 'New Model', new_make_model_path(@make)

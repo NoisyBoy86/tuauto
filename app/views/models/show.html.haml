@@ -1,0 +1,10 @@
+%p#notice= notice
+%p
+  %strong Make:
+  = @model.make.try(:name)
+%p
+  %strong Model:
+  = @model.model
+= link_to 'Edit', edit_make_model_path(@make,@model)
+|
+= link_to 'Back', make_models_path(@make)

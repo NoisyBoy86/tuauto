@@ -1,0 +1,20 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title Tuauto
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+  %body
+    = navbar fixed: :top do
+      = navbar_collapse do
+        = navbar_group do
+          = navbar_item 'Marcas', makes_path
+
+    .container
+      .row
+        .span12
+          = render_breadcrumbs
+          = bootstrap_flash
+          = yield
